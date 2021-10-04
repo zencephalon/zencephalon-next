@@ -8,6 +8,8 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 
+import { GET } from "~/lib/api";
+
 const Home: NextPage = ({ node }) => {
   return (
     <div className={styles.container}>
@@ -28,17 +30,15 @@ const Home: NextPage = ({ node }) => {
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;
+  const node = await GET(`public/node/${slug}`);
 
-  const res = await fetch(`http://localhost:8000/public/node/${slug}`, {
-    headers: { Authorization: "wMHDXuKaYJ3wnYmrpnOKmgtt" },
-  });
-  const node = await res.json();
   const content = unified()
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypeStringify)
     .processSync(node.content).value;
 
+  console.log("Hello");
   console.log({ node: { ...node, content } });
 
   return {
@@ -47,10 +47,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`http://localhost:8000/public/index`, {
-    headers: { Authorization: "wMHDXuKaYJ3wnYmrpnOKmgtt" },
-  });
-  const slugs = await res.json();
+  const slugs = await GET(`public/index`);
   console.log(slugs);
   return {
     paths: slugs.map((slug) => {
