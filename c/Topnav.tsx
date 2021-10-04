@@ -9,14 +9,18 @@ import zen from "~/public/zenchinese.png";
 const Topnav: React.FC = ({ children }) => {
   return (
     <header>
-      <div
-        style={{
-          width: "3.6em",
-          display: "block",
-        }}
-      >
-        <Image src={zen} alt="Z腦" layout="responsive" />
-      </div>
+      <Link href="/">
+        <a>
+          <div
+            style={{
+              width: "3.6em",
+              display: "block",
+            }}
+          >
+            <Image src={zen} alt="Z腦" layout="responsive" />
+          </div>
+        </a>
+      </Link>
     </header>
   );
 };
