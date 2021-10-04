@@ -2,7 +2,11 @@ import React from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
-const Article: React.FC = ({ markdown }) => {
+interface Props {
+  markdown: string;
+}
+
+const Article: React.FC<Props> = ({ markdown }) => {
   return (
     <article>
       <ReactMarkdown
