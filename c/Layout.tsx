@@ -10,6 +10,10 @@ const Layout: React.FC = ({ children }) => {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/zenchinese.png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Vollkorn&display=optional"
+          rel="stylesheet"
+        />
       </Head>
       <Topnav />
 

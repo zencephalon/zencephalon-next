@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Footer: React.FC = ({ children }) => {
   return (
-    <footer>
+    <footer className="footer">
       <p>
-        Made with{" "}
+        © Matthew Bunday 2010-2021. Made with{" "}
         <Link href="/luv">
           <a>luv</a>
         </Link>

@@ -12,12 +12,18 @@ html {
 }
 
 body {
-  background-color: #fafffa;
+  background-color: #fdfffa;
   color: #35342f;
   display: flex;
   justify-content: flex-start;
   font-family: "Vollkorn", serif;
   margin: 0.5em 1.5em;
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  display: flex;
 }
 
 ul {
