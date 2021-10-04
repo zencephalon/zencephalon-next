@@ -5,7 +5,7 @@ const Authorization = process.env.API_TOKEN || "";
 export const GET = async (path: string) => {
   const requestHeaders: HeadersInit = new Headers();
   requestHeaders.set("Authorization", Authorization);
-  const res = await fetch(`${baseUrl}/${path}`, {
+  const res = await fetch(`${baseUrl}/${encodeURI(path)}`, {
     headers: requestHeaders,
   });
   const obj = await res.json();
