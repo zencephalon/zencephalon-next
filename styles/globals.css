@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #fafffa;
   color: #35342f;
   display: flex;
   justify-content: flex-start;
@@ -29,7 +29,7 @@ a {
 }
 
 a:visited {
-  color: #ccc;
+  color: #316585;
 }
 
 img.logo {
@@ -58,26 +58,4 @@ article h2 {
 
 article h3 {
   font-weight: normal;
-}
-
-article.faded a {
-  color: #c6e8f1;
-}
-article.faded a:visited {
-  color: #ddd;
-}
-
-article:not(.faded) a {
-  color: #36aecc;
-}
-article:not(.faded) a:visited {
-  color: #aaa;
-}
-
-article.faded {
-  color: #ddd;
-}
-
-article:not(.faded) {
-  color: #000;
 }
