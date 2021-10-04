@@ -1,9 +1,18 @@
 import React from "react";
-
-import styles from "~/styles/Home.module.css";
+import Link from "next/link";
 
 const Footer: React.FC = ({ children }) => {
-  return <footer className={styles.footer}>Made with luv.</footer>;
+  return (
+    <footer>
+      <p>
+        Made with{" "}
+        <Link href="/luv">
+          <a>luv</a>
+        </Link>
+        .
+      </p>
+    </footer>
+  );
 };
 
 export default Footer;
