@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -12,7 +12,13 @@ import remarkRehype from "remark-rehype";
 
 import { GET } from "~/lib/api";
 
-const Home: NextPage = ({ node }) => {
+import Node from "~/t/Node";
+
+interface Props {
+  node: Node;
+}
+
+const Home: NextPage<Props> = ({ node }) => {
   return (
     <Layout>
       <Head>
@@ -27,12 +33,12 @@ const Home: NextPage = ({ node }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async (context) => {
   const node = await GET(`public/root`);
 
   return {
     props: { node }, // will be passed to the page component as props
   };
-}
+};
 
 export default Home;

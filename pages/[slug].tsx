@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -12,7 +12,13 @@ import remarkRehype from "remark-rehype";
 
 import { GET } from "~/lib/api";
 
-const NodePage: NextPage = ({ node }) => {
+import Node from "~/t/Node";
+
+interface Props {
+  node: Node;
+}
+
+const NodePage: NextPage<Props> = ({ node }) => {
   return (
     <Layout>
       <Head>
@@ -27,25 +33,25 @@ const NodePage: NextPage = ({ node }) => {
   );
 };
 
-export async function getStaticProps(context) {
-  const slug = context.params.slug;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const slug = context?.params?.slug;
   const node = await GET(`public/node/${slug}`);
 
   return {
     props: { node }, // will be passed to the page component as props
   };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await GET(`public/index`);
   console.log(slugs);
   return {
-    paths: slugs.map((slug) => {
+    paths: slugs.map((slug: string) => {
       return { params: { slug } };
     }),
     // TODO: setup a fallback page
     fallback: false,
   };
-}
+};
 
 export default NodePage;

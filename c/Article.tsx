@@ -14,7 +14,7 @@ const Article: React.FC<Props> = ({ markdown }) => {
         components={{
           a: ({ href, ...rest }) => {
             return (
-              <Link href={href}>
+              <Link href={href || ""}>
                 <a {...rest} />
               </Link>
             );
