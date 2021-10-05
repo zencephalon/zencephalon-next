@@ -1,4 +1,3 @@
-// const baseUrl = 'http://localhost:8000';
 const baseUrl = process.env.BASE_URL;
 const Authorization = process.env.API_TOKEN || "";
 
