@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" href="/zenchinese.png" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Vollkorn&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap"
             rel="stylesheet"
           />
         </Head>
