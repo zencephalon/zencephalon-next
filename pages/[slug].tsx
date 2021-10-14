@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 
 import Layout from "~/c/Layout";
 import Article from "~/c/Article";
+import Backlinks from "~/c/Backlinks";
 
 import { GET } from "~/lib/api";
 
@@ -24,6 +25,7 @@ const NodePage: NextPage<Props> = ({ node }) => {
       <main className={styles.main}>
         <Article markdown={node.content} />
       </main>
+      <Backlinks backlinks={node.backlinks} />
     </Layout>
   );
 };
@@ -31,6 +33,8 @@ const NodePage: NextPage<Props> = ({ node }) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context?.params?.slug;
   const node = await GET(`public/node/${slug}`);
+
+  console.log(node.backlinks);
 
   return {
     props: { node },

@@ -46,7 +46,12 @@ article,
 footer,
 header {
   max-width: 37em;
-  margin-left: 0.5em;
+}
+
+div.backlinks {
+  margin-top: 1em;
+  border-top: 1px solid #eaeaea;
+  font-size: 60%;
 }
 
 footer p {
