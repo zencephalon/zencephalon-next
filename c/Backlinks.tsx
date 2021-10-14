@@ -1,7 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-const Backlinks: React.FC = ({ backlinks }) => {
+interface Props {
+  backlinks: Array<[string, string]>;
+}
+
+const Backlinks: React.FC<Props> = ({ backlinks }) => {
   console.log(backlinks);
   return (
     <div className="backlinks">
