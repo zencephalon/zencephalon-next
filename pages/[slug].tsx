@@ -50,7 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       return { params: { slug } };
     }),
     // TODO: setup a fallback page
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
