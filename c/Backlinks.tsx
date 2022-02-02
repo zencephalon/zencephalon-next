@@ -6,7 +6,6 @@ interface Props {
 }
 
 const Backlinks: React.FC<Props> = ({ backlinks }) => {
-  console.log(backlinks);
   return (
     <div className="backlinks">
       <p>
