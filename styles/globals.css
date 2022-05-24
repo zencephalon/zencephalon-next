@@ -50,8 +50,8 @@ a[href*="//"]:not([href*="zencephalon.com"])
 
 a[href*="//"]:not([href*="zencephalon.com"]):after
 {
-  content: "↗️";
-  font-size: 0.6em;
+  content: "↗";
+  font-size: 0.5em;
   vertical-align: super;
 }
 
