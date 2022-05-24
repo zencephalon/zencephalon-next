@@ -43,6 +43,11 @@ a:visited {
   color: #012c36;
 }
 
+a[href*="//"]:not([href*="zencephalon.com"]):after
+{
+  content: "↗️";
+}
+
 img.logo {
   height: 2em;
 }
