@@ -14,7 +14,11 @@ const NodePage: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Article markdown="# Sorry\nCouldn't find this page." />
+        <Article
+          markdown="# Sorry
+        
+        Couldn't find this page."
+        />
       </main>
     </Layout>
   );
