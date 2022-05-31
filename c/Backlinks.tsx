@@ -6,10 +6,11 @@ interface Props {
 }
 
 const Backlinks: React.FC<Props> = ({ backlinks }) => {
+  const bl = backlinks.filter((link) => !!link[0]);
   return (
     <div className="backlinks">
       <p>
-        {backlinks.map(([slug, name], index) => {
+        {bl.map(([slug, name], index) => {
           return (
             <>
               <Link key={slug} href={`/${slug}`}>
