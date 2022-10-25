@@ -14,7 +14,7 @@ const Backlinks: React.FC<Props> = ({ backlinks }) => {
           return (
             <>
               <Link key={slug} href={`/${slug}`}>
-                <a>{name}</a>
+                {name}
               </Link>
               {index < bl.length - 1 ? ", " : ""}
             </>

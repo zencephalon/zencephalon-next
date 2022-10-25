@@ -10,14 +10,11 @@ const Article: React.FC<Props> = ({ markdown }) => {
   return (
     <article>
       <ReactMarkdown
+        // eslint-disable-next-line react/no-children-prop
         children={markdown}
         components={{
-          a: ({ href, ...rest }) => {
-            return (
-              <Link href={href || ""}>
-                <a {...rest} />
-              </Link>
-            );
+          a: ({ href, ref, ...rest }) => {
+            return <Link href={href || ""} {...rest}></Link>;
           },
         }}
       />

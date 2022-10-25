@@ -5,11 +5,7 @@ const Footer: React.FC = ({ children }) => {
   return (
     <footer className="footer">
       <p>
-        © Matthew Bunday 2010-2022. Made with{" "}
-        <Link href="/luv">
-          <a>luv</a>
-        </Link>
-        .
+        © Matthew Bunday 2010-2022. Made with <Link href="/luv">luv</Link>.
       </p>
     </footer>
   );

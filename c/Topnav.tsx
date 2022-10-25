@@ -10,16 +10,14 @@ const Topnav: React.FC = ({ children }) => {
   return (
     <header>
       <Link href="/">
-        <a>
-          <div
-            style={{
-              width: "3.6em",
-              display: "block",
-            }}
-          >
-            <Image src={zen} alt="Z腦" layout="responsive" />
-          </div>
-        </a>
+        <div
+          style={{
+            width: "3.6em",
+            display: "block",
+          }}
+        >
+          <Image src={zen} alt="Z腦" layout="responsive" />
+        </div>
       </Link>
     </header>
   );
