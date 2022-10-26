@@ -1,5 +1,3 @@
-import styles from "../../styles/Home.module.css";
-
 import Article from "~/c/Article";
 import Backlinks from "~/c/Backlinks";
 
@@ -15,7 +13,7 @@ const NodePage = async ({ params }: Props) => {
   return (
     <>
       <TitleReload title={node.name} />
-      <main className={styles.main}>
+      <main>
         <Article markdown={node.content} />
       </main>
       <Backlinks backlinks={node.backlinks} />

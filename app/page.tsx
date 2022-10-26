@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 
 import Article from "~/c/Article";
 
@@ -16,7 +15,7 @@ const Home = async () => {
         <meta name="description" content={`Zencephalon.com index`} />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <Article markdown={node.content} />
       </main>
     </>
