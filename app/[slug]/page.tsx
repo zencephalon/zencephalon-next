@@ -21,14 +21,14 @@ const NodePage = async ({ params }: Props) => {
   );
 };
 
-// export async function generateStaticParams() {
-//   const slugs = await GET(`public/index`);
+export async function generateStaticParams() {
+  const slugs = await GET(`public/index`);
 
-//   console.log(slugs);
+  console.log(slugs);
 
-//   return slugs.map((slug: string) => ({
-//     slug,
-//   }));
-// }
+  return slugs.map((slug: string) => ({
+    slug,
+  }));
+}
 
 export default NodePage;
