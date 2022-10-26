@@ -31,8 +31,7 @@ const NodePage = async ({ params }: Props) => {
 };
 
 const getNode = async (slug: string): Promise<Node> => {
-  const node = await GET(`public/node/${slug}`);
-  return node;
+  return GET(`public/node/${slug}`);
 };
 
 export default NodePage;
