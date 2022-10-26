@@ -1,6 +1,8 @@
 const baseUrl = process.env.BASE_URL;
 const Authorization = process.env.API_TOKEN || "";
 
+import Node from "~/t/Node";
+
 export const GET = async (path: string) => {
   const requestHeaders: HeadersInit = new Headers();
   requestHeaders.set("Authorization", Authorization);
@@ -10,4 +12,8 @@ export const GET = async (path: string) => {
   const obj = await res.json();
 
   return obj;
+};
+
+export const getNode = async (slug: string): Promise<Node> => {
+  return GET(`public/node/${slug}`);
 };

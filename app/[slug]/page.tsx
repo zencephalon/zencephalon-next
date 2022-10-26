@@ -1,13 +1,10 @@
-import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 
-import Layout from "~/c/Layout";
 import Article from "~/c/Article";
 import Backlinks from "~/c/Backlinks";
 
-import { GET } from "~/lib/api";
-
-import Node from "~/t/Node";
+import { getNode } from "~/lib/api";
+import TitleReload from "~/c/TitleReload";
 
 interface Props {
   params: { slug: string };
@@ -16,22 +13,14 @@ interface Props {
 const NodePage = async ({ params }: Props) => {
   const node = await getNode(params.slug);
   return (
-    <Layout>
-      <Head>
-        <title>{node.name}</title>
-        <meta name="description" content={`${node.name} on zencephalon.com`} />
-      </Head>
-
+    <>
+      <TitleReload title={node.name} />
       <main className={styles.main}>
         <Article markdown={node.content} />
       </main>
       <Backlinks backlinks={node.backlinks} />
-    </Layout>
+    </>
   );
-};
-
-const getNode = async (slug: string): Promise<Node> => {
-  return GET(`public/node/${slug}`);
 };
 
 export default NodePage;
