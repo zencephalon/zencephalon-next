@@ -25,7 +25,7 @@ export async function generateStaticParams() {
   const slugs = await GET(`public/index`);
 
   return slugs.map((slug: string) => ({
-    slug: slug,
+    slug,
   }));
 }
 

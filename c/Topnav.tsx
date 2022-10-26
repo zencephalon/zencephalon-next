@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import zen from "~/public/zenchinese.png";
 
-const Topnav: React.FC = ({ children }) => {
+const Topnav = () => {
   return (
     <header>
       <Link href="/">
