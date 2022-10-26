@@ -1,6 +1,10 @@
 import { getNode } from "~/lib/api";
 
-export default async function Head({ params }) {
+interface Props {
+  params: { slug: string };
+}
+
+export default async function Head({ params }: Props) {
   const node = await getNode(params.slug);
   return (
     <>

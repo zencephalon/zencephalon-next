@@ -14,7 +14,7 @@ const Topnav: React.FC = ({ children }) => {
             display: "block",
           }}
         >
-          <Image src={zen} alt="Z腦" layout="responsive" />
+          <Image src={zen} alt="Z腦" />
         </div>
       </Link>
     </header>

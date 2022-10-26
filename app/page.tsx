@@ -22,7 +22,7 @@ const Home = async () => {
   );
 };
 
-export const getIndex = async (): Promise<Node> => {
+const getIndex = async (): Promise<Node> => {
   const node = await GET(`public/root`);
 
   return node;
