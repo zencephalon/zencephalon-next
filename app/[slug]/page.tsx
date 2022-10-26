@@ -1,7 +1,7 @@
 import Article from "~/c/Article";
 import Backlinks from "~/c/Backlinks";
 
-import { getNode } from "~/lib/api";
+import { GET, getNode } from "~/lib/api";
 import TitleReload from "~/c/TitleReload";
 
 interface Props {
@@ -20,5 +20,13 @@ const NodePage = async ({ params }: Props) => {
     </>
   );
 };
+
+export async function generateStaticParams() {
+  const slugs = await GET(`public/index`);
+
+  return slugs.map((slug: string) => ({
+    slug: slug,
+  }));
+}
 
 export default NodePage;
