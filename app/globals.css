@@ -1,0 +1,89 @@
+/* Older browsers */
+html {
+  font-size: 16px;
+}
+
+/* Modern browsers only need this one */
+
+@media screen and (min-width: 25em) {
+  html {
+    font-size: calc(20px + (24 - 20) * (100vw - 400px) / (800 - 400));
+  }
+}
+
+body {
+  background-color: #fdfffa;
+  color: #35342f;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Vollkorn", serif;
+  margin: 0.5em 1.5em;
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+}
+
+ul {
+  line-height: 1.8em;
+}
+
+a {
+  color: #36aecc;
+}
+
+a:hover {
+  text-decoration: none;
+  box-shadow: inset 0 -0.6em 0 #a5eaf5;
+}
+
+a:visited {
+  color: #012c36;
+}
+
+a[href*="//"]:not([href*="zencephalon.com"])
+{
+  text-decoration: none;
+}
+
+a[href*="//"]:not([href*="zencephalon.com"]):after
+{
+  content: "↗";
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+img.logo {
+  height: 2em;
+}
+
+article,
+footer,
+header {
+  max-width: 37em;
+}
+
+div.backlinks {
+  margin-top: 1em;
+  border-top: 1px solid #eaeaea;
+  font-size: 60%;
+}
+
+footer p {
+  font-size: 60%;
+}
+
+article h1 {
+  font-weight: normal;
+  color: #36aecc;
+}
+
+article h2 {
+  font-weight: normal;
+}
+
+article h3 {
+  font-weight: normal;
+}
