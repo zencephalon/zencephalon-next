@@ -1,7 +1,7 @@
 import Article from "~/c/Article";
 import Backlinks from "~/c/Backlinks";
 
-import { GET, getNode } from "~/lib/api";
+import { getIndex, getNode, GET } from "~/lib/api";
 import TitleReload from "~/c/TitleReload";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const NodePage = async ({ params }: Props) => {
-  const node = await getNode(params.slug);
+  const node = await (params.slug === "" ? getIndex() : getNode(params.slug));
   return (
     <>
       <TitleReload title={node.name} />

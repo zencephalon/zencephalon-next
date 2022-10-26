@@ -15,5 +15,15 @@ export const GET = async (path: string) => {
 };
 
 export const getNode = async (slug: string): Promise<Node> => {
+  console.log("getting node", slug);
   return GET(`public/node/${slug}`);
+};
+
+export const getIndex = async (): Promise<Node> => {
+  console.log("getting index");
+  const node = await GET(`public/root`);
+
+  console.log("got index", node);
+
+  return node;
 };
