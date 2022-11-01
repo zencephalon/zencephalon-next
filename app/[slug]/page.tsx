@@ -29,6 +29,7 @@ export async function generateStaticParams() {
   return slugs.map((slug: string) => ({
     slug,
   }));
+  // return [{ slug: "kuki-takaharu" }];
 }
 
 export default NodePage;

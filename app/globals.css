@@ -86,3 +86,13 @@ article h2 {
 article h3 {
   font-weight: normal;
 }
+
+section.footnotes {
+  font-size: 60%;
+}
+
+section.footnotes > ol {
+  list-style-type: decimal;
+  margin-inline-start: 1em;
+  padding-inline-start: 0;
+}

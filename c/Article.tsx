@@ -15,8 +15,18 @@ const Article: React.FC<Props> = ({ markdown }) => {
         children={markdown}
         remarkPlugins={[remarkGfm]}
         components={{
-          a: ({ href, ...rest }) => {
-            return <Link href={href || ""} {...rest}></Link>;
+          a: ({ href, children, ...rest }) => {
+            if (rest.role === "doc-noteref") {
+              return <a href={href}>{children}</a>;
+            }
+            if (rest.role === "doc-backlink") {
+              return <a href={href}>{children}</a>;
+            }
+            return (
+              <Link href={href || ""} {...rest}>
+                {children}
+              </Link>
+            );
           },
         }}
       />
