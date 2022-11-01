@@ -10,11 +10,17 @@ const Topnav = () => {
       <Link href="/">
         <div
           style={{
-            width: "3.6em",
+            height: "2em",
             display: "block",
+            position: "relative",
           }}
         >
-          <Image src={zen} alt="Z腦" />
+          <Image
+            src={zen}
+            alt="Z腦"
+            fill={true}
+            style={{ objectFit: "contain", objectPosition: "left" }}
+          />
         </div>
       </Link>
     </header>
